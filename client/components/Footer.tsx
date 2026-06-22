@@ -28,7 +28,10 @@ export default function Footer() {
               About
             </a>
             <a href="/projects" className="text-gray-400 hover:text-white transition text-sm">
-              Works
+              Projects
+            </a>
+            <a href="/contact" className="text-gray-400 hover:text-white transition text-sm">
+              Contact
             </a>
           </div>
 

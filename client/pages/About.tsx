@@ -127,7 +127,7 @@ export default function About() {
               {
                 title: "24/7 Premium Support",
                 desc: "Our dedicated support team is always ready to help you succeed. Your success is our success.",
-                image: "https://images.unsplash.com/photo-1611339555312-e607c90352fd?w=600&h=400&fit=crop",
+                image: "https://vuetelligence.com/assets/new-about-banner-6de2827d.jpg",
               },
             ].map((item, i) => (
               <div key={i} className={`grid md:grid-cols-2 gap-12 items-center animate-fade-in-up`}>
@@ -149,7 +149,7 @@ export default function About() {
       </section>
 
       {/* Team Section */}
-      <section className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-white">
+      {/* <section className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16 animate-fade-in-up">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Our Team</h2>
@@ -177,7 +177,7 @@ export default function About() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <section className="bg-gradient-to-r from-neon-green to-neon-green-dark py-20 md:py-32 px-4 sm:px-6 lg:px-8">

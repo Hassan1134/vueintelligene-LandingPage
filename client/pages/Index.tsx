@@ -32,6 +32,100 @@ export default function Index() {
     }
   };
 
+  const comparisonData = {
+    amy: {
+      headers: ["Amy AI", "ChatGPT (OpenAI)", "Claude (Anthropic)", "Salesforce Einstein"],
+      rows: [
+        {
+          feature: "Embedded in live meetings",
+          values: [true, false, false, false],
+        },
+        {
+          feature: "Real-time webinar interaction",
+          values: [true, false, false, false],
+        },
+        {
+          feature: "Context-aware enterprise customization",
+          values: [true, "limited", "limited", true],
+        },
+        {
+          feature: "Workflow automation",
+          values: [true, "limited", "limited", true],
+        },
+        {
+          feature: "Integration with communication platform",
+          values: [true, false, false, "limited"],
+        },
+      ],
+    },
+
+    vuwr: {
+      headers: ["VUWR Meetings", "Zoom", "Microsoft Teams", "Google Meet", "Webex", "Hopin"],
+      rows: [
+        {
+          feature: "AI-powered real-time Q&A",
+          values: [true, false, "limited", false, "limited", false],
+        },
+        {
+          feature: "AI + Human interaction combined",
+          values: [true, false, false, false, false, false],
+        },
+        {
+          feature: "Persistent engagment after meetings",
+          values: [true, false, "limited", false, false, "limited"],
+        },
+        {
+          feature: "Interactive knowledge networks",
+          values: [true, "limited", "limited", false, "limited", false],
+        },
+        {
+          feature: "Webinar + networking integrations",
+          values: [true, false, "limited", false, false, true],
+        },
+        {
+          feature: "AI moderations & follow-ups",
+          values: [true, false, "limited", false, false, false],
+        },
+        {
+          feature: "Scalable to large audiences",
+          values: [true, true, true, true, true, true],
+        },
+        {
+          feature: "Built-in monitization",
+          values: [true, false, false, false, false, "limited"],
+        },
+      ],
+    },
+
+    deiji: {
+      headers: ["DeijiDesign", "Micheal Kors", "Coach", "Tory Burch"],
+      rows: [
+        {
+          feature: "Luxury product offering",
+          values: [true, true, true, true],
+        },
+        {
+          feature: "E-commerce presence",
+          values: [true, true, true, true],
+        },
+        {
+          feature: "Ai-powered customer engagement",
+          values: [true, false, false, false],
+        },
+        {
+          feature: "Live streaming merchandising",
+          values: [true, false, false, false],
+        },
+        {
+          feature: "Integration with communication platform",
+          values: [true, false, false, false],
+        },
+      ],
+    },
+  };
+
+  const currentData = comparisonData[activeTab];
+
   const faqs = [
     {
       q: "What are the methods, that you can use to access the platform?",
@@ -249,72 +343,106 @@ export default function Index() {
       {/* What Will You Be Getting - Comparison Table */}
       <section className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-6xl mx-auto">
+          {/* Heading */}
           <div className="mb-16 text-center animate-fade-in-up">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-              What will you<br />be getting
+              What will you
+              <br />
+              be getting
             </h2>
+
             <p className="text-gray-600 max-w-2xl mx-auto text-base leading-relaxed">
-              Real experiences, genuine feedback—discover how our creative solutions have transformed brands and elevated businesses.
+              Real experiences, genuine feedback—discover how our creative
+              solutions have transformed brands and elevated businesses.
             </p>
           </div>
 
           {/* Tabs */}
           <div className="mb-12 bg-gray-50 p-4 rounded-2xl flex justify-center w-full animate-fade-in-up hide-scrollbar overflow-x-auto">
             <div className="flex justify-center gap-4 md:gap-8">
-              {["amy", "vuwr", "deiji"].map((tab, idx) => (
+              {[
+                { key: "amy", label: "AMY AI" },
+                { key: "vuwr", label: "VUWR MEETINGS" },
+                { key: "deiji", label: "DEIJIDESIGN" },
+              ].map((tab) => (
                 <button
-                  key={tab}
-                  onClick={() => setActiveTab(tab)}
-                  className={`px-5 md:px-6 py-2 rounded-lg font-semibold whitespace-nowrap transition duration-300 text-sm md:text-base ${
-                    activeTab === tab
-                      ? "bg-neon-green text-black"
-                      : "text-gray-700 hover:text-gray-900"
-                  }`}
+                  key={tab.key}
+                  onClick={() => setActiveTab(tab.key)}
+                  className={`px-5 md:px-6 py-2 rounded-lg font-semibold whitespace-nowrap transition-all duration-300 text-sm md:text-base ${activeTab === tab.key
+                    ? "bg-neon-green text-black shadow-md"
+                    : "text-gray-700 hover:text-gray-900"
+                    }`}
                 >
-                  {["AMY AI", "VUWR MEETINGS", "DEIJIDESIGN"][idx]}
+                  {tab.label}
                 </button>
               ))}
             </div>
           </div>
 
           {/* Comparison Table */}
-          <div className="overflow-x-auto animate-fade-in-up hide-scrollbar rounded-lg border border-gray-200">
-            <table className="w-full">
+          <div
+            key={activeTab}
+            className="overflow-x-auto animate-fade-in-up hide-scrollbar rounded-lg border border-gray-200"
+          >
+            <table className="w-full min-w-[800px]">
               <thead>
                 <tr className="bg-gray-700 text-white">
-                  <th className="text-left py-4 px-6 font-bold text-sm">Feature</th>
-                  <th className="text-center py-4 px-6 font-bold text-sm bg-neon-green text-black">Amy AI</th>
-                  <th className="text-center py-4 px-6 font-bold text-sm">ChatGPT (OpenAI)</th>
-                  <th className="text-center py-4 px-6 font-bold text-sm">Claude (Anthropic)</th>
-                  <th className="text-center py-4 px-6 font-bold text-sm">Salesforce Einstein</th>
+                  <th className="text-left py-4 px-6 font-bold text-sm">
+                    Feature
+                  </th>
+
+                  {currentData.headers.map((header, index) => (
+                    <th
+                      key={header}
+                      className={`text-center py-4 px-6 font-bold text-sm ${index === 0
+                        ? "bg-neon-green text-black"
+                        : ""
+                        }`}
+                    >
+                      {header}
+                    </th>
+                  ))}
                 </tr>
               </thead>
+
               <tbody>
-                {[
-                  "Embedded in live meetings",
-                  "Real-time webinar interaction",
-                  "Context-aware enterprise customization",
-                  "Workflow automation",
-                  "Integration with communication platform",
-                ].map((feature, idx) => (
-                  <tr key={idx} className="border-b border-gray-200 bg-white hover:bg-gray-50 transition">
-                    <td className="py-5 px-6 font-medium text-gray-900 text-sm">{feature}</td>
-                    <td className="text-center py-5 px-6 bg-neon-green">
-                      <span className="text-black font-bold text-xl">✓</span>
+                {currentData.rows.map((row, rowIndex) => (
+                  <tr
+                    key={rowIndex}
+                    className="border-b border-gray-200 bg-white hover:bg-gray-50 transition-colors"
+                  >
+                    <td className="py-5 px-6 font-medium text-gray-900 text-sm">
+                      {row.feature}
                     </td>
-                    <td className="text-center py-5 px-6">
-                      <span className="text-gray-400 text-xl">✕</span>
-                    </td>
-                    <td className="text-center py-5 px-6">
-                      <span className="text-gray-400 text-xl">✕</span>
-                    </td>
-                    <td className="text-center py-5 px-6">
-                      {idx < 2 ? (
-                        <span className="text-gray-400 text-xl">✕</span>
-                      ) : (
-                        <span className="text-neon-green/50 text-xl">✓</span>
-                      )}
-                    </td>
+
+                    {row.values.map((value, valueIndex) => (
+                      <td
+                        key={valueIndex}
+                        className={`text-center py-5 px-6 ${valueIndex === 0 ? "bg-neon-green" : ""
+                          }`}
+                      >
+                        {value === true && (
+                          <span
+                            className={`font-bold text-xl ${valueIndex === 0 ? "text-black" : "text-green-500"
+                              }`}
+                          >
+                            ✓
+                          </span>
+                        )}
+
+                        {value === false && (
+                          <span className="font-bold text-xl text-gray-400">
+                            ✕
+                          </span>
+                        )}
+
+                        {value === "limited" && (
+                          <span className="text-xs md:text-sm font-semibold px-3 py-1 rounded-full bg-yellow-100 text-yellow-700">
+                            Limited
+                          </span>
+                        )}
+                      </td>
+                    ))}
                   </tr>
                 ))}
               </tbody>

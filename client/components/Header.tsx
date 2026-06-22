@@ -5,7 +5,8 @@ import { useLocation } from "react-router-dom";
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
-  { label: "Works", href: "/projects" },
+  { label: "Projects", href: "/projects" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Header() {

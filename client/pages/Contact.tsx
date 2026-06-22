@@ -4,28 +4,56 @@ import Footer from "../components/Footer";
 import HeroSection from "../components/HeroSection";
 import FaqSection from "../components/FaqSection";
 
-const contactFaqs = [
-  {
-    q: "What's your typical response time?",
-    a: "We aim to respond to all inquiries within 24 business hours. For urgent matters, please call us directly.",
-  },
-  {
-    q: "Do you offer custom solutions?",
-    a: "Yes! We specialize in creating custom solutions tailored to your specific needs and requirements.",
-  },
-  {
-    q: "What's your pricing model?",
-    a: "We offer flexible pricing based on your team size and requirements. Contact us for a personalized quote.",
-  },
-  {
-    q: "Do you provide onboarding support?",
-    a: "Absolutely. We provide comprehensive onboarding and training to ensure your team gets the most out of our platform.",
-  },
-  {
-    q: "What payment methods do you accept?",
-    a: "We accept all major credit cards, bank transfers, and can discuss custom payment arrangements for enterprise clients.",
-  },
-];
+  const contactFaqs = [
+    {
+      q: "What are the methods, that you can use to access the platform?",
+      a: "No. All deliverables are white-label by default. No branding, no watermarks, and source files are yours. The work is yours to present.",
+    },
+    {
+      q: "How does the platform ensure all participant questions are answered?",
+      a: "Our platform uses AI-powered systems to monitor and respond to participant questions in real-time, ensuring comprehensive coverage.",
+    },
+    {
+      q: "What are the benefits of using AES-256 for encryption?",
+      a: "AES-256 provides military-grade encryption security, protecting your data with 256-bit key length for maximum confidentiality.",
+    },
+    {
+      q: "What are the key benefits of the automated meeting management of Amy AI?",
+      a: "Automated meeting management streamlines scheduling, transcription, note-taking, and follow-ups, saving teams hours of manual work.",
+    },
+    {
+      q: "What are the benefits of the AI-Enabled features in more detail?",
+      a: "AI-enabled features provide intelligent insights, predictive analytics, and automated workflows that enhance productivity and decision-making.",
+    },
+    {
+      q: "How Automated meeting management works?",
+      a: "Our system automatically schedules meetings, creates agendas, generates real-time transcripts, and produces comprehensive post-meeting summaries.",
+    },
+    {
+      q: "How do the tiered subscription plans work?",
+      a: "Our tiered plans range from Starter to Enterprise, each offering different levels of features, user seats, and support options.",
+    },
+    {
+      q: "What AI meeting management features are included in the Standard plan?",
+      a: "Standard plan includes real-time transcription, AI note-taking, meeting insights, and basic automation features for teams up to 50 users.",
+    },
+    {
+      q: "What are examples of how AI participant matching may be used?",
+      a: "Participant matching connects users with similar interests, skills, or goals for networking, collaboration, and knowledge sharing.",
+    },
+    {
+      q: "What methods does the system use to assess participant matching?",
+      a: "The system uses machine learning algorithms that analyze profiles, behavior patterns, and interaction history for optimal matching.",
+    },
+    {
+      q: "How are user profiles created and maintained?",
+      a: "Users create profiles with their information, which the system continuously updates based on activity, preferences, and feedback.",
+    },
+    {
+      q: "How can I get started with the platform?",
+      a: "Simply sign up on our website, choose your subscription plan, and follow the onboarding wizard to set up your first meeting.",
+    },
+  ];
 
 export default function Contact() {
   return (
