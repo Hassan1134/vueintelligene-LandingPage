@@ -1,74 +1,18 @@
-import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import HeroSection from "../components/HeroSection";
 
 export default function About() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <header className="sticky top-0 w-full bg-gradient-to-b from-white to-neon-green/5 z-50 border-b border-gray-300/50">
-        <div className="max-w-full px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-          <div className="font-bold text-lg text-gray-900">Logo</div>
-          
-          {/* Desktop Nav */}
-          <nav className="hidden md:flex gap-12 items-center">
-            <a href="/" className="text-gray-900 hover:text-gray-700 text-sm font-medium">Home</a>
-            <a href="/about" className="text-gray-900 hover:text-gray-700 text-sm font-medium bg-neon-green/15 px-3 py-1 rounded">About</a>
-            <a href="/projects" className="text-gray-900 hover:text-gray-700 text-sm font-medium">Works</a>
-          </nav>
+      <Header />
 
-          <div className="hidden md:flex gap-3 items-center">
-            <button className="bg-gray-900 text-white px-6 py-2 rounded-full text-xs font-semibold hover:bg-gray-800 transition">
-              Get Started
-            </button>
-            <button className="border-2 border-gray-900 text-gray-900 px-5 py-1.5 rounded-full text-xs font-medium hover:bg-gray-900 hover:text-white transition">
-              Login
-            </button>
-          </div>
-
-          <button className="md:hidden text-gray-900" onClick={() => setMenuOpen(!menuOpen)}>
-            {menuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-
-        {menuOpen && (
-          <div className="md:hidden border-t border-gray-300/50 bg-gradient-to-b from-white to-neon-green/5">
-            <nav className="flex flex-col gap-4 px-4 py-4">
-              <a href="/" className="text-gray-900 hover:text-gray-700">Home</a>
-              <a href="/about" className="text-gray-900 hover:text-gray-700 bg-neon-green/15 px-3 py-1 rounded inline-block">About</a>
-              <a href="/projects" className="text-gray-900 hover:text-gray-700">Works</a>
-              <button className="bg-gray-900 text-white px-6 py-2 rounded-full text-xs font-semibold hover:bg-gray-800 w-full">
-                Get Started
-              </button>
-              <button className="border-2 border-gray-900 text-gray-900 px-6 py-2 rounded-full text-xs font-medium hover:bg-gray-900 hover:text-white w-full">
-                Login
-              </button>
-            </nav>
-          </div>
-        )}
-      </header>
-
-      {/* Hero Section */}
-      <section className="relative h-[400px] md:h-[600px] overflow-hidden mx-4 sm:mx-6 lg:mx-8 mt-6 rounded-3xl">
-        <div className="absolute inset-0 bg-black">
-          <img 
-            src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=800&fit=crop"
-            alt="About Hero"
-            className="w-full h-full object-cover opacity-100"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent"></div>
-        </div>
-
-        <div className="relative h-full flex flex-col justify-center px-8 sm:px-12 lg:px-16 animate-fade-in">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-8 max-w-2xl leading-tight">
-            Empowering teams with innovative collaboration solutions
-          </h1>
-          <button className="bg-neon-green text-black px-8 py-3 rounded-lg font-semibold hover:bg-neon-green-dark transition duration-300 transform hover:scale-105 w-fit">
-            Learn Our Story
-          </button>
-        </div>
-      </section>
+      <HeroSection
+        image="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=800&fit=crop"
+        alt="About Hero"
+        title="Empowering teams with innovative collaboration solutions"
+        buttons={[{ label: "Learn Our Story", variant: "primary" }]}
+      />
 
       {/* Company Story */}
       <section className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-white">
@@ -88,7 +32,7 @@ export default function About() {
             </div>
 
             <div className="h-80 bg-gradient-to-br from-gray-300 to-gray-400 rounded-3xl overflow-hidden hover:shadow-2xl transition duration-300 animate-fade-in-right">
-              <img 
+              <img
                 src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=600&fit=crop"
                 alt="Team"
                 className="w-full h-full object-cover hover:scale-105 transition duration-300"
@@ -143,7 +87,7 @@ export default function About() {
               { title: "Collaboration", desc: "Believing in the power of teamwork and shared success" },
               { title: "Excellence", desc: "Committed to highest quality in everything we do" },
               { title: "Impact", desc: "Creating meaningful change that matters to our customers" },
-              { title: "Growth", desc: "Embracing learning and evolution in all aspects" }
+              { title: "Growth", desc: "Embracing learning and evolution in all aspects" },
             ].map((value, i) => (
               <div key={i} className="bg-gray-50 p-8 rounded-2xl hover:shadow-lg hover:-translate-y-2 transition duration-300">
                 <div className="w-12 h-12 bg-neon-green rounded-full flex items-center justify-center mb-4">
@@ -172,27 +116,27 @@ export default function About() {
               {
                 title: "Industry Experience",
                 desc: "Over a decade of expertise in collaboration technology, serving companies from startups to enterprises.",
-                image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop"
+                image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop",
               },
               {
                 title: "Customer-First Approach",
                 desc: "Every feature is built based on real feedback from our users. We listen, learn, and improve constantly.",
                 image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop",
-                reverse: true
+                reverse: true,
               },
               {
                 title: "24/7 Premium Support",
                 desc: "Our dedicated support team is always ready to help you succeed. Your success is our success.",
-                image: "https://images.unsplash.com/photo-1611339555312-e607c90352fd?w=600&h=400&fit=crop"
-              }
+                image: "https://images.unsplash.com/photo-1611339555312-e607c90352fd?w=600&h=400&fit=crop",
+              },
             ].map((item, i) => (
-              <div key={i} className={`grid md:grid-cols-2 gap-12 items-center animate-fade-in-up ${item.reverse ? "md:flex-row-reverse" : ""}`}>
+              <div key={i} className={`grid md:grid-cols-2 gap-12 items-center animate-fade-in-up`}>
                 <div className={item.reverse ? "order-2 md:order-2" : "order-1"}>
                   <h3 className="text-3xl font-bold text-gray-900 mb-4">{item.title}</h3>
                   <p className="text-gray-600 text-base leading-relaxed">{item.desc}</p>
                 </div>
                 <div className={`h-80 bg-gray-300 rounded-3xl overflow-hidden hover:shadow-2xl transition duration-300 ${item.reverse ? "order-1 md:order-1" : "order-2"}`}>
-                  <img 
+                  <img
                     src={item.image}
                     alt={item.title}
                     className="w-full h-full object-cover hover:scale-105 transition duration-300"
@@ -218,7 +162,7 @@ export default function About() {
             {[1, 2, 3, 4].map((i) => (
               <div key={i} className="bg-gray-50 rounded-2xl overflow-hidden hover:shadow-lg transition duration-300">
                 <div className="h-64 bg-gradient-to-br from-gray-300 to-gray-400 overflow-hidden">
-                  <img 
+                  <img
                     src={`https://images.unsplash.com/photo-${i === 1 ? "1507003211169" : i === 2 ? "1438761681033" : i === 3 ? "1516321318423" : "1500648767791"}?w=400&h=400&fit=crop`}
                     alt={`Team member ${i}`}
                     className="w-full h-full object-cover hover:scale-110 transition duration-300"
@@ -253,13 +197,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-8 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto flex items-center justify-between text-sm">
-          <p className="text-gray-400">© 2024 vuetelligence. All rights reserved.</p>
-          <div className="text-gray-400">info@vuetelligence.com</div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
