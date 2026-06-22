@@ -150,21 +150,21 @@ export default function Index() {
           {/* Desktop Nav */}
           <nav className="hidden md:flex gap-10 items-center absolute left-1/2 -translate-x-1/2">
             <a
-              href="#"
+              href="/"
               className="text-black text-sm font-medium hover:opacity-70 transition"
             >
               Home
             </a>
 
             <a
-              href="#"
+              href="/about"
               className="text-black text-sm font-medium hover:opacity-70 transition"
             >
               About
             </a>
 
             <a
-              href="#"
+              href="/projects"
               className="text-black text-sm font-medium hover:opacity-70 transition"
             >
               Works
