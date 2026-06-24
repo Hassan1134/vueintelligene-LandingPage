@@ -79,8 +79,8 @@ export default function Contact() {
 
           <div className="grid md:grid-cols-3 gap-8 animate-fade-in-up">
             {[
-              { icon: Mail, title: "Email", content: "hello@vuetelligence.com", link: "mailto:hello@vuetelligence.com" },
-              { icon: Phone, title: "Phone", content: "+1 (555) 123-4567", link: "tel:+15551234567" },
+              { icon: Mail, title: "Email", content: "info@vuetelligence.com", link: "mailto:info@vuetelligence.com" },
+              { icon: Phone, title: "Phone", content: "+1 (866) 357-5012", link: "tel:+18663575012" },
               { icon: MapPin, title: "Office", content: "123 Innovation Street, Tech City, TC 12345", link: "#" },
             ].map((item, i) => {
               const Icon = item.icon;
