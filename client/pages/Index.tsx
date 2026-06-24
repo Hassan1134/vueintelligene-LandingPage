@@ -339,30 +339,35 @@ export default function Index() {
                 quote: "WOW!!! This is a transformative and generational shift in communications.",
                 full: "Thanks so much for forwarding me updates. You continue to inspire and create what is impossible for others to do. Going through the platform now. WOW!!! This is a transformative and generational shift in communications.",
                 name: "John G.",
+                email: "jgipson1989@gmail.com",
                 title: "",
               },
               {
                 quote: "Users are in for a big surprise as they see and hear what it can do!",
                 full: "This will generate considerable adoption in Vuetelligence across social media and cable tv. Users are in for a big surprise as they see and hear what it can do!",
                 name: "Bruce",
+                email: "pwrchaser@aol.com",
                 title: "",
               },
               {
                 quote: "I get a feeling I could start a business, connect it to Vuetelligence, and practically let it run itself!",
                 full: "I looked over what you sent and I am not only impressed, I am overwhelmed. I get a feeling I could start a business, connect it to Vuetelligence, and practically let it run itself!",
                 name: "Bruce C.",
+                email: "bruce@camprey.com",
                 title: "Former White House Communication Security Officer/Analyst",
               },
               {
                 quote: "You really got something going here. It's a race to Alpha Centauri!",
                 full: "You really got something going here. It's a race to Alpha Centauri!",
                 name: "Dr. Dennis Bonnette",
+                email: "drbonnette@twc.com",
                 title: "",
               },
               {
                 quote: "This is sooooooooooooo amazing.",
                 full: "This is sooooooooooooo amazing.",
                 name: "Sal Fradella",
+                email: "sfradella@maxmgrp.com",
                 title: "Investment Banker",
               },
             ].map((t, i) => (
@@ -384,6 +389,7 @@ export default function Index() {
                 <div>
                   <p className="font-bold text-gray-900 text-sm">{t.name}</p>
                   {t.title && <p className="text-gray-900 text-xs">{t.title}</p>}
+                  <a href={`mailto:${t.email}`} className="text-gray-700 text-xs mt-0.5 font-bold hover:underline block">{t.email}</a>
                 </div>
               </div>
             ))}
