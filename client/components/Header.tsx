@@ -60,7 +60,7 @@ export default function Header() {
         {/* Desktop Buttons */}
         <div className="hidden md:flex gap-3 items-center">
           <button
-            onClick={() => navigate("https://www.deijidesign.com/")}
+            onClick={() => navigate("/contact")}
             className="bg-[#171717] text-white px-7 py-3 rounded-full text-sm font-semibold hover:bg-black transition">
             Get Started
           </button>
@@ -88,7 +88,7 @@ export default function Header() {
               </a>
             ))}
             <button 
-            onClick={() => navigate("https://www.deijidesign.com/")}
+            onClick={() => navigate("/contact")}
             className="bg-black text-white rounded-full py-3">
               Get Started
             </button>

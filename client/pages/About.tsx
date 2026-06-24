@@ -190,7 +190,7 @@ export default function About() {
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
             <button 
-            onClick={() => navigate("https://www.deijidesign.com/")}
+            onClick={() => navigate("/contact")}
             className="bg-black text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-900 transition duration-300 transform hover:scale-105">
               Get Started
             </button>

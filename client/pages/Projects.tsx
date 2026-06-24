@@ -29,7 +29,7 @@ export default function Projects() {
       />
 
       {/* Project Filters */}
-      <section className="py-12 md:py-16 px-4 sm:px-6 lg:px-8 bg-white">
+      {/* <section className="py-12 md:py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-6xl mx-auto animate-fade-in-up">
           <div className="flex gap-3 overflow-x-auto pb-4 hide-scrollbar">
             {categories.map((cat) => (
@@ -47,7 +47,7 @@ export default function Projects() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Projects Grid */}
       <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
@@ -110,7 +110,7 @@ export default function Projects() {
           <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">Start Your Project Today</h2>
           <p className="text-black/80 text-lg mb-8 leading-relaxed">Let's create something amazing together</p>
           <button 
-          onClick={() => navigate("https://www.deijidesign.com/")}
+          onClick={() => navigate("/contact")}
           className="bg-black text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-900 transition duration-300 transform hover:scale-105">
             Get Started
           </button>
