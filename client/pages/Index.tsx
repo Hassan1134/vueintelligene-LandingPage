@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import MarqueePackage from "react-fast-marquee";
+import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import HeroSection from "../components/HeroSection";
@@ -10,7 +11,7 @@ const Marquee = (MarqueePackage as any).default || MarqueePackage;
 export default function Index() {
   const [activeTab, setActiveTab] = useState("amy");
   const [formData, setFormData] = useState({ name: "", email: "" });
-
+  const navigate = useNavigate();
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -24,6 +25,7 @@ export default function Index() {
 
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
   const handlePlay = () => {
     if (videoRef.current) {
@@ -60,7 +62,7 @@ export default function Index() {
     },
 
     vuwr: {
-      headers: ["VUWR Meetings", "Zoom", "Microsoft Teams", "Google Meet", "Webex", "Hopin"],
+      headers: ["VUETELLIGENCE MEETINGS", "Zoom", "Microsoft Teams", "Google Meet", "Webex", "Hopin"],
       rows: [
         {
           feature: "AI-powered real-time Q&A",
@@ -186,9 +188,10 @@ export default function Index() {
         alt="Hero"
         title="Redefining collaboration, communication and AI-Powered connectivity"
         objectFit="contain"
+
         buttons={[
-          { label: "Get Started", variant: "primary" },
-          { label: "Login", variant: "secondary" },
+          { label: "Get Started", variant: "primary", href: "/contact" },
+          // { label: "Login", variant: "secondary" },
         ]}
       />
 
@@ -225,7 +228,9 @@ export default function Index() {
                 and real-time knowledge access, AMY enhances communication,
                 personalization, and engagement.
               </p>
-              <button className="bg-neon-green text-black px-6 py-2 rounded font-semibold text-sm hover:bg-neon-green-dark transition w-fit">
+              <button
+                onClick={() => navigate("https://www.deijidesign.com/")}
+                className="bg-neon-green text-black px-6 py-2 rounded font-semibold text-sm hover:bg-neon-green-dark transition w-fit">
                 View More
               </button>
             </div>
@@ -234,29 +239,42 @@ export default function Index() {
           {/* Project 2 - VUWR Meetings */}
           <div className="grid md:grid-cols-12 gap-8 items-stretch animate-fade-in-up">
             <div className="md:col-span-6 bg-gray-100 p-10 rounded-2xl flex flex-col justify-center order-2 md:order-1">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 uppercase">VUWR MEETINGS</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 uppercase">VUETELLIGENCE MEETINGS</h3>
               <p className="text-gray-700 mb-4 leading-relaxed text-base">
-                VUWR MEETINGS is a secure, next-generation video conferencing platform
+                VUETELLIGENCE MEETINGS is a secure, next-generation video conferencing platform
                 designed for businesses of all sizes. Featuring 4K HDR video, enhanced
                 audio clarity, and unlimited meeting capacity, it delivers a truly
                 immersive communication experience.
               </p>
               <p className="text-gray-700 mb-6 leading-relaxed text-base">
-                VUWR MEETINGS is a secure, next-generation video conferencing platform
+                VUETELLIGENCE MEETINGS is a secure, next-generation video conferencing platform
                 designed for businesses of all sizes. Featuring 4K HDR video, enhanced
                 audio clarity, and unlimited meeting capacity, it delivers a truly
                 immersive communication experience.
               </p>
-              <button className="bg-neon-green text-black px-6 py-2 rounded font-semibold text-sm hover:bg-neon-green-dark transition w-fit">
+              <button 
+               onClick={() => navigate("https://www.deijidesign.com/")}
+              className="bg-neon-green text-black px-6 py-2 rounded font-semibold text-sm hover:bg-neon-green-dark transition w-fit">
                 View More
               </button>
             </div>
-            <div className="md:col-span-6 rounded-3xl overflow-hidden bg-black min-h-[450px] order-1 md:order-2">
-              <img
-                src="https://vuetelligence.com/assets/meeting-ca80c13b.jpg"
-                alt="VUWR Meetings"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-              />
+            <div
+              className="md:col-span-6 rounded-3xl overflow-hidden bg-black min-h-[450px] order-1 md:order-2 relative cursor-pointer group"
+              onClick={() => setIsVideoModalOpen(true)}
+            >
+              <video
+                className="w-full h-full object-cover"
+                muted
+                loop
+                playsInline
+              >
+                <source src="/video2.mp4" type="video/mp4" />
+              </video>
+              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/55 transition-colors flex items-center justify-center">
+                <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-2xl transition-transform group-hover:scale-110">
+                  <div className="ml-2 w-0 h-0 border-l-[24px] border-l-black border-y-[14px] border-y-transparent" />
+                </div>
+              </div>
             </div>
           </div>
 
@@ -285,7 +303,9 @@ export default function Index() {
                 are never compromised. It inspires a new generation of global luxury
                 consumers.
               </p>
-              <button className="bg-neon-green text-black px-6 py-2 rounded font-semibold text-sm hover:bg-neon-green-dark transition w-fit">
+              <button 
+               onClick={() => navigate("https://www.deijidesign.com/")}
+              className="bg-neon-green text-black px-6 py-2 rounded font-semibold text-sm hover:bg-neon-green-dark transition w-fit">
                 View More
               </button>
             </div>
@@ -313,11 +333,42 @@ export default function Index() {
             </p>
           </div>
 
-          <div className="flex gap-6 overflow-x-auto pb-2 animate-fade-in-up">
-            {[1, 2, 3].map((i) => (
+          <div className="flex gap-6 overflow-x-auto pb-2 animate-fade-in-up hide-scrollbar">
+            {[
+              {
+                quote: "WOW!!! This is a transformative and generational shift in communications.",
+                full: "Thanks so much for forwarding me updates. You continue to inspire and create what is impossible for others to do. Going through the platform now. WOW!!! This is a transformative and generational shift in communications.",
+                name: "John G.",
+                title: "",
+              },
+              {
+                quote: "Users are in for a big surprise as they see and hear what it can do!",
+                full: "This will generate considerable adoption in Vuetelligence across social media and cable tv. Users are in for a big surprise as they see and hear what it can do!",
+                name: "Bruce",
+                title: "",
+              },
+              {
+                quote: "I get a feeling I could start a business, connect it to Vuetelligence, and practically let it run itself!",
+                full: "I looked over what you sent and I am not only impressed, I am overwhelmed. I get a feeling I could start a business, connect it to Vuetelligence, and practically let it run itself!",
+                name: "Bruce C.",
+                title: "Former White House Communication Security Officer/Analyst",
+              },
+              {
+                quote: "You really got something going here. It's a race to Alpha Centauri!",
+                full: "You really got something going here. It's a race to Alpha Centauri!",
+                name: "Dr. Dennis Bonnette",
+                title: "",
+              },
+              {
+                quote: "This is sooooooooooooo amazing.",
+                full: "This is sooooooooooooo amazing.",
+                name: "Sal Fradella",
+                title: "Investment Banker",
+              },
+            ].map((t, i) => (
               <div
                 key={i}
-                className="flex-shrink-0 w-80 bg-transparent p-5 rounded-2xl border-2 border-gray-900 hover:shadow-lg transition duration-300"
+                className="flex-shrink-0 w-80 bg-transparent p-5 rounded-2xl border-2 border-gray-900 hover:shadow-lg transition duration-300 flex flex-col"
               >
                 <div className="flex gap-0.5 mb-4">
                   {[...Array(5)].map((_, j) => (
@@ -325,17 +376,18 @@ export default function Index() {
                   ))}
                 </div>
                 <p className="text-gray-900 font-bold mb-3 text-sm leading-tight">
-                  "They're good enough for me!"
+                  "{t.quote}"
                 </p>
-                <p className="text-gray-900 text-xs mb-6 leading-relaxed font-medium">
-                  If designs from DEIJIDESIGN are good enough for Oprah and JLo, ya better believe they're good enough for me!
+                <p className="text-gray-900 text-xs mb-6 leading-relaxed font-medium flex-1">
+                  {t.full}
                 </p>
                 <div>
-                  <p className="font-bold text-gray-900 text-sm">LaRae Day</p>
-                  <p className="text-gray-900 text-xs">CEO</p>
+                  <p className="font-bold text-gray-900 text-sm">{t.name}</p>
+                  {t.title && <p className="text-gray-900 text-xs">{t.title}</p>}
                 </div>
               </div>
             ))}
+            <div className="flex-shrink-0 w-[calc(50vw-10rem)]" aria-hidden="true" />
           </div>
         </div>
       </section>
@@ -362,7 +414,7 @@ export default function Index() {
             <div className="flex justify-center gap-4 md:gap-8">
               {[
                 { key: "amy", label: "AMY AI" },
-                { key: "vuwr", label: "VUWR MEETINGS" },
+                { key: "vuwr", label: "VUETELLIGENCE MEETINGS" },
                 { key: "deiji", label: "DEIJIDESIGN" },
               ].map((tab) => (
                 <button
@@ -494,7 +546,7 @@ export default function Index() {
               onPlay={() => setIsPlaying(true)}
               onPause={() => setIsPlaying(false)}
             >
-              <source src="https://vuetelligence.com/assets/Video2-43d3f917.mp4" type="video/mp4" />
+              <source src="/video1.mp4" type="video/mp4" />
             </video>
             {!isPlaying && (
               <div className="absolute inset-0 bg-black/40 flex items-center justify-center z-10">
@@ -562,6 +614,34 @@ export default function Index() {
           </div>
         </div>
       </section>
+
+      {isVideoModalOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4"
+          onClick={() => setIsVideoModalOpen(false)}
+        >
+          <div className="absolute inset-0 backdrop-blur-md bg-black/60" />
+          <div
+            className="relative z-10 w-full max-w-4xl rounded-2xl overflow-hidden shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setIsVideoModalOpen(false)}
+              className="absolute top-4 right-4 z-10 w-10 h-10 bg-white/20 hover:bg-white/40 rounded-full flex items-center justify-center text-white text-xl font-bold transition"
+            >
+              ✕
+            </button>
+            <video
+              className="w-full aspect-video"
+              controls
+              autoPlay
+              playsInline
+            >
+              <source src="/video2.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+      )}
 
       <Footer />
     </div>

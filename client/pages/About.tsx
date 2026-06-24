@@ -1,8 +1,10 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import HeroSection from "../components/HeroSection";
+import { useNavigate } from "react-router-dom";
 
 export default function About() {
+    const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -11,7 +13,7 @@ export default function About() {
         image="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=800&fit=crop"
         alt="About Hero"
         title="Empowering teams with innovative collaboration solutions"
-        buttons={[{ label: "Learn Our Story", variant: "primary" }]}
+        buttons={[{ label: "Learn Our Story", variant: "primary", href:"https://www.deijidesign.com/" }]}
       />
 
       {/* Company Story */}
@@ -187,7 +189,9 @@ export default function About() {
             Join hundreds of companies already transforming their teamwork
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
-            <button className="bg-black text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-900 transition duration-300 transform hover:scale-105">
+            <button 
+            onClick={() => navigate("https://www.deijidesign.com/")}
+            className="bg-black text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-900 transition duration-300 transform hover:scale-105">
               Get Started
             </button>
             <button className="border-2 border-black text-black bg-transparent px-8 py-3 rounded-lg font-semibold hover:bg-black hover:text-white transition duration-300">

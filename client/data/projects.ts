@@ -55,7 +55,7 @@ export const projects: Project[] = [
   },
   {
     id: 2,
-    title: "VUWR Meetings",
+    title: "VUETELLIGENCE MEETINGS",
     category: "Video",
     image: "https://vuetelligence.com/assets/meeting-ca80c13b.jpg",
     heroImage: "https://vuetelligence.com/assets/meeting-ca80c13b.jpg",
@@ -64,7 +64,7 @@ export const projects: Project[] = [
     challenge:
       "Remote teams faced unreliable video calls, poor audio quality, and limited collaboration tools that hindered productivity.",
     solution:
-      "VUWR Meetings delivers 4K HDR video conferencing with AI-powered noise cancellation, unlimited participants, and integrated collaboration tools.",
+      "VUETELLIGENCE MEETINGS delivers 4K HDR video conferencing with AI-powered noise cancellation, unlimited participants, and integrated collaboration tools.",
     results:
       "35% improvement in team productivity, 60% reduction in travel costs, 95% uptime SLA",
     tech: ["WebRTC", "React", "Node.js"],
@@ -84,7 +84,7 @@ export const projects: Project[] = [
     ],
     testimonial: {
       quote:
-        "VUWR Meetings replaced three different tools we were using. Crystal clear video and the collaboration features are second to none.",
+        "VUETELLIGENCE MEETINGS replaced three different tools we were using. Crystal clear video and the collaboration features are second to none.",
       author: "Marcus Lee",
       title: "CTO, GlobalRemote Inc.",
     },

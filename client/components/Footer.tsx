@@ -14,8 +14,18 @@ export default function Footer() {
               />
             </div>
             <div className="space-y-2">
-              <p className="text-gray-400 text-sm">info@vuetelligence.com</p>
-              <p className="text-gray-400 text-sm">+1 (866) 357-5012</p>
+              <p className="text-gray-400 text-sm"><a
+                href="mailto:info@vuetelligence.com"
+                className="text-gray-400 text-sm hover:text-white transition"
+              >
+                info@vuetelligence.com
+              </a></p>
+              <p className="text-gray-400 text-sm"><a
+                href="tel:+18663575012"
+                className="text-gray-400 text-sm hover:text-white transition"
+              >
+                +1 (866) 357-5012
+              </a></p>
             </div>
           </div>
 

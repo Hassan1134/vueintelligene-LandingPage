@@ -4,8 +4,10 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import HeroSection from "../components/HeroSection";
 import { projects } from "../data/projects";
+import { useNavigate } from "react-router-dom";
 
 export default function Projects() {
+  const navigate = useNavigate();
   const [activeCategory, setActiveCategory] = useState("all");
 
   const categories = ["all", "AI", "Video", "Design", "Analytics", "Collaboration", "Mobile"];
@@ -107,7 +109,9 @@ export default function Projects() {
         <div className="max-w-4xl mx-auto text-center animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">Start Your Project Today</h2>
           <p className="text-black/80 text-lg mb-8 leading-relaxed">Let's create something amazing together</p>
-          <button className="bg-black text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-900 transition duration-300 transform hover:scale-105">
+          <button 
+          onClick={() => navigate("https://www.deijidesign.com/")}
+          className="bg-black text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-900 transition duration-300 transform hover:scale-105">
             Get Started
           </button>
         </div>
