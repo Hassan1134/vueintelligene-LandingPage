@@ -184,7 +184,10 @@ export default function Contact() {
           <p className="text-black/80 text-lg mb-8 leading-relaxed">
             Schedule a demo or get in touch with our team today
           </p>
-          <button className="bg-black text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-900 transition duration-300 transform hover:scale-105">
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="bg-black text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-900 transition duration-300 transform hover:scale-105"
+          >
             Schedule a Demo
           </button>
         </div>

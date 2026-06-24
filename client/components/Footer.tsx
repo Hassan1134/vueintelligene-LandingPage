@@ -81,7 +81,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Footer */}
-        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+        {/* <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
           <p>© Vuetelligence copyright 2026</p>
           <div className="flex gap-6 mt-4 md:mt-0">
             <a href="/privacy" className="hover:text-gray-400 transition">
@@ -91,7 +91,7 @@ export default function Footer() {
               Terms & Conditions
             </a>
           </div>
-        </div>
+        </div> */}
       </div>
     </footer>
   );
