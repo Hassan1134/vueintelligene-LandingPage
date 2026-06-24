@@ -1,12 +1,14 @@
 import { ArrowLeft } from "lucide-react";
+import { useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { getProjectById, getRelatedProjects } from "../data/projects";
-
+import { useNavigate } from "react-router-dom";
 export default function ProjectDetail() {
   const { id } = useParams<{ id: string }>();
   const project = getProjectById(Number(id));
+  const navigate = useNavigate();
 
   if (!project) {
     return (
@@ -30,6 +32,8 @@ export default function ProjectDetail() {
   }
 
   const relatedProjects = getRelatedProjects(project.id);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   return (
     <div className="min-h-screen bg-white">
@@ -59,7 +63,17 @@ export default function ProjectDetail() {
               {project.category}
             </span>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">{project.title}</h1>
-            <p className="text-white/80 text-lg max-w-2xl">{project.fullDescription}</p>
+            <p className="text-white/80 text-lg max-w-2xl mb-6">{project.fullDescription}</p>
+            {(project.id === 1 || project.id === 3) && (
+              <a
+                href="https://www.deijidesign.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-neon-green text-black px-8 py-3 rounded-lg font-semibold hover:bg-neon-green-dark transition duration-300 transform hover:scale-105 w-fit block"
+              >
+                View
+              </a>
+            )}
           </div>
         </div>
       </section>
@@ -82,6 +96,42 @@ export default function ProjectDetail() {
           ))}
         </div>
       </section>
+
+      {/* Video Section — VUETELLIGENCE MEETINGS only */}
+      {project.id === 2 && (
+        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
+          <div className="max-w-7xl mx-auto animate-fade-in-up">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">See It in Action</h2>
+            <p className="text-gray-600 text-base leading-relaxed mb-10 max-w-2xl">
+              Watch how VUETELLIGENCE MEETINGS transforms the way teams communicate, collaborate, and connect.
+            </p>
+            <div className="relative rounded-3xl overflow-hidden aspect-video bg-black shadow-2xl">
+              <video
+                ref={videoRef}
+                className="absolute inset-0 w-full h-full object-cover"
+                controls={isPlaying}
+                playsInline
+                onPlay={() => setIsPlaying(true)}
+                onPause={() => setIsPlaying(false)}
+                onEnded={() => setIsPlaying(false)}
+              >
+                <source src="/video2.mp4" type="video/mp4" />
+              </video>
+              {!isPlaying && (
+                <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center gap-6 z-10">
+                  <button
+                    onClick={() => { videoRef.current?.play(); setIsPlaying(true); }}
+                    className="w-24 h-24 bg-neon-green rounded-full flex items-center justify-center shadow-2xl transition-transform hover:scale-110"
+                  >
+                    <div className="ml-2 w-0 h-0 border-l-[28px] border-l-black border-y-[17px] border-y-transparent" />
+                  </button>
+                  <span className="text-white text-sm font-semibold tracking-widest uppercase opacity-80">Play Video</span>
+                </div>
+              )}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Technology Stack */}
       <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-white">
@@ -217,15 +267,17 @@ export default function ProjectDetail() {
             Let's discuss how we can help your business achieve similar results
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
-            <button className="bg-black text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-900 transition duration-300 transform hover:scale-105">
+            <button 
+            onClick={() => navigate("/contact")}
+            className="bg-black text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-900 transition duration-300 transform hover:scale-105">
               Start Your Project
             </button>
-            <Link
+            {/* <Link
               to="/contact"
               className="border-2 border-black text-black bg-transparent px-8 py-3 rounded-lg font-semibold hover:bg-black hover:text-white transition duration-300"
             >
               Contact Us
-            </Link>
+            </Link> */}
           </div>
         </div>
       </section>
