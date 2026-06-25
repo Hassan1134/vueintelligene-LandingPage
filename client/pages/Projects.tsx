@@ -76,7 +76,7 @@ export default function Projects() {
 
                 <div className="p-6">
                   <div className="flex items-start justify-between mb-3">
-                    <span className="inline-block bg-neon-green/10 text-neon-green text-xs font-semibold px-3 py-1 rounded-full">
+                    <span className="inline-block bg-neon-green text-black text-xs font-semibold px-3 py-1 rounded-full">
                       {project.category}
                     </span>
                   </div>
@@ -85,7 +85,7 @@ export default function Projects() {
                   </h3>
                   <p className="text-gray-600 text-sm mb-4 leading-relaxed">{project.description}</p>
                   <div className="flex gap-2 flex-wrap">
-                    {project.tech.slice(0, 3).map((t, i) => (
+                    {project.tech.slice(0, 4).map((t, i) => (
                       <span key={i} className="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">
                         {t}
                       </span>

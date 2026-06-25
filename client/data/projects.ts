@@ -21,8 +21,8 @@ export const projects: Project[] = [
     id: 1,
     title: "Amy AI",
     category: "AI",
-    image: "https://vuetelligence.com/assets/amy-ai-07e22362.jpg",
-    heroImage: "https://vuetelligence.com/assets/amy-ai-07e22362.jpg",
+    image: "/Picture2.png",
+    heroImage: "/Picture2.png",
     description: "Intelligent virtual avatar for customer support",
     fullDescription: "Intelligent Virtual Avatar for Customer Support",
     challenge:
@@ -31,7 +31,7 @@ export const projects: Project[] = [
       "We built Amy AI, an intelligent virtual avatar powered by advanced AI that provides instant, human-like customer support 24/7.",
     results:
       "50% reduction in support tickets, 90% customer satisfaction rate, 40% cost savings",
-    tech: ["AI", "ML", "React"],
+    tech: ["Artificial Intelligence", "AI Analytics", "Machine Learning", "Intelligent Automation"],
     technologies: ["Python", "TensorFlow", "React", "Node.js", "PostgreSQL", "AWS"],
     timeline: [
       { phase: "Discovery", desc: "Understanding requirements and market analysis" },
@@ -67,7 +67,7 @@ export const projects: Project[] = [
       "VUETELLIGENCE MEETINGS delivers 4K HDR video conferencing with AI-powered noise cancellation, unlimited participants, and integrated collaboration tools.",
     results:
       "35% improvement in team productivity, 60% reduction in travel costs, 95% uptime SLA",
-    tech: ["WebRTC", "React", "Node.js"],
+    tech: ["Video Conferencing", "Virtual Meetings", "Business Communication", "Enterprise Technology"],
     technologies: ["WebRTC", "React", "Node.js", "Redis", "Kubernetes", "GCP"],
     timeline: [
       { phase: "Research", desc: "Analyzing existing solutions and identifying gaps" },
@@ -103,7 +103,7 @@ export const projects: Project[] = [
       "DEIJIDESIGN offers bespoke branding, editorial design, and digital experiences built on deep cultural research and world-class craftsmanship.",
     results:
       "200% increase in brand perception scores, partnerships with Oprah's OWN Network, JLo's brand portfolio, and global luxury retailers",
-    tech: ["Design", "Figma", "UX"],
+    tech: ["Italian Craftsmanship", "Luxury Linen", "Modern Lifestyle", "Luxury Wear"],
     technologies: ["Figma", "Adobe Creative Suite", "Framer", "Webflow", "After Effects", "Blender"],
     timeline: [
       { phase: "Brand Audit", desc: "Deep dive into brand DNA and market positioning" },

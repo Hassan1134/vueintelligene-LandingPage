@@ -26,6 +26,10 @@ export default function Index() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+  const testimonialRef = useRef<HTMLDivElement>(null);
+  const scrollTestimonials = (dir: "left" | "right") => {
+    testimonialRef.current?.scrollBy({ left: dir === "left" ? -344 : 344, behavior: "smooth" });
+  };
 
   const handlePlay = () => {
     if (videoRef.current) {
@@ -209,7 +213,7 @@ export default function Index() {
           <div className="grid md:grid-cols-12 gap-8 items-stretch animate-fade-in-up">
             <div className="md:col-span-6 rounded-3xl overflow-hidden bg-black min-h-[450px]">
               <img
-                src="https://vuetelligence.com/assets/amy-ai-07e22362.jpg"
+                src="/Picture2.png"
                 alt="Amy AI"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
               />
@@ -317,23 +321,41 @@ export default function Index() {
       <section
         className="relative py-24 md:py-24 px-4 pt-12 sm:px-6 lg:px-8 overflow-hidden"
         style={{
-          backgroundImage: "url(https://vuetelligence.com/assets/amy-ai-07e22362.jpg)",
+          backgroundImage: "url(/Picture2.png)",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-neon-green via-neon-green/80 to-transparent" />
         <div className="relative z-10 px-8 md:px-16 py-20 md:py-28">
-          <div className="max-w-2xl mb-12 animate-fade-in-left">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900 leading-tight">
-              Stories From Clients
-            </h2>
-            <p className="text-gray-900 text-base leading-relaxed font-medium">
-              Real experiences, genuine feedback—discover how our creative solutions have transformed brands and elevated businesses.
-            </p>
+          <div className="flex items-end justify-between mb-12 animate-fade-in-left flex-wrap gap-6">
+            <div className="max-w-2xl">
+              <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900 leading-tight">
+                Stories From Clients
+              </h2>
+              <p className="text-gray-900 text-base leading-relaxed font-medium">
+                Real experiences, genuine feedback—discover how our creative solutions have transformed brands and elevated businesses.
+              </p>
+            </div>
+            <div className="flex gap-3 flex-shrink-0">
+              <button
+                onClick={() => scrollTestimonials("left")}
+                aria-label="Scroll left"
+                className="w-12 h-12 rounded-full bg-gray-900 text-white flex items-center justify-center hover:bg-neon-green hover:text-black transition-all duration-300 shadow-md"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button
+                onClick={() => scrollTestimonials("right")}
+                aria-label="Scroll right"
+                className="w-12 h-12 rounded-full bg-neon-green text-black flex items-center justify-center hover:bg-gray-900 hover:text-white transition-all duration-300 shadow-md"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+            </div>
           </div>
 
-          <div className="flex gap-6 overflow-x-auto pb-2 animate-fade-in-up hide-scrollbar">
+          <div ref={testimonialRef} className="flex gap-6 overflow-x-auto pb-2 animate-fade-in-up hide-scrollbar">
             {[
               {
                 quote: "WOW!!! This is a transformative and generational shift in communications.",
@@ -370,6 +392,55 @@ export default function Index() {
                 email: "sfradella@maxmgrp.com",
                 title: "Investment Banker",
               },
+              {
+                quote: "I don't know who Mark Schwartz is, but I love his shoes.",
+                full: "I don't know who Mark Schwartz is, but I love his shoes.",
+                name: "Oprah Winfrey",
+                email: "",
+                title: "Luxury Lifestyle",
+              },
+              {
+                quote: "Nobody's come out with anything like your designs. I love my boots!",
+                full: "I have to tell you. I've never seen anything like DEIJIDESIGN... Nobody's come out with anything like your designs. I love my boots! They're both really unique and comfortable.",
+                name: "Mariel Hemingway",
+                email: "",
+                title: "Actress",
+              },
+              {
+                quote: "If designs from DEIJIDESIGN are good enough for Oprah and JLo, ya better believe they're good enough for me!",
+                full: "If designs from DEIJIDESIGN are good enough for Oprah and JLo, ya better believe they're good enough for me!",
+                name: "LaRae Day",
+                email: "",
+                title: "Model",
+              },
+              {
+                quote: "I'm loving my Cleopatra bag & Arrow Gold sneakers by DEIJIDESIGN!!!",
+                full: "I'm loving my Cleopatra bag & Arrow Gold sneakers by DEIJIDESIGN!!! Thankyou to the legendary Mark Schwartz Shoe Designer & Riva Wilkins for your luxury creations!!! Can't wait to visit your store in SOHO NYC!!! Be...fabulous",
+                name: "Lisa Vrancken",
+                email: "",
+                title: "Exec VP — Shark Discoveries",
+              },
+              {
+                quote: "DEIJIDESIGN creates the most luxurious and elegant products.",
+                full: "DEIJIDESIGN creates the most luxurious and elegant products, which are made the finest italian leather curated by premiere Italian artisans in Italy with love.",
+                name: "LA Weekly",
+                email: "",
+                title: "Media",
+              },
+              {
+                quote: "I love DEIJIDESIGN.",
+                full: "I love DEIJIDESIGN.",
+                name: "Kevin Harrington",
+                email: "",
+                title: "CEO — Shark Discoveries",
+              },
+              {
+                quote: "DEIJIDESIGN elevates your wardrobe through authentic, quality craftsmanship.",
+                full: "DEIJIDESIGN elevates your wardrobe through authentic, quality craftsmanship. Style an inspired look with COVET brand partner DEIJIDESIGN. COVET FASHION is Owned by Electronics Arts.",
+                name: "Charlice Prischke",
+                email: "",
+                title: "Brand Manager — Covet Fashion",
+              },
             ].map((t, i) => (
               <div
                 key={i}
@@ -389,7 +460,7 @@ export default function Index() {
                 <div>
                   <p className="font-bold text-gray-900 text-sm">{t.name}</p>
                   {t.title && <p className="text-gray-900 text-xs">{t.title}</p>}
-                  <a href={`mailto:${t.email}`} className="text-gray-700 text-xs mt-0.5 font-bold hover:underline block">{t.email}</a>
+                  {t.email && <a href={`mailto:${t.email}`} className="text-gray-700 text-xs mt-0.5 font-bold hover:underline block">{t.email}</a>}
                 </div>
               </div>
             ))}
@@ -574,7 +645,7 @@ export default function Index() {
       <section
         className="relative py-24 md:py-24 px-4 pt-12 sm:px-6 lg:px-8 overflow-hidden"
         style={{
-          backgroundImage: "url(https://vuetelligence.com/assets/amy-ai-07e22362.jpg)",
+          backgroundImage: "url(/Picture2.png)",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
