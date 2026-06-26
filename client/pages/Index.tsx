@@ -215,7 +215,7 @@ export default function Index() {
               <img
                 src="/Picture2.png"
                 alt="Amy AI"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                className="w-full h-full object-fill hover:scale-105 transition-transform duration-300"
               />
             </div>
             <div className="md:col-span-6 bg-gray-100 p-10 rounded-2xl flex flex-col justify-center">
