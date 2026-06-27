@@ -19,10 +19,10 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 1,
-    title: "Amy AI",
+    title: "AMY AI",
     category: "AI",
-    image: "/Picture2.png",
-    heroImage: "/Picture2.png",
+    image: "/Picture3.jpeg",
+    heroImage: "/Picture3.jpeg",
     description: "Intelligent virtual avatar for customer support",
     fullDescription: "Intelligent Virtual Avatar for Customer Support",
     challenge:
@@ -31,7 +31,7 @@ export const projects: Project[] = [
       "We built Amy AI, an intelligent virtual avatar powered by advanced AI that provides instant, human-like customer support 24/7.",
     results:
       "50% reduction in support tickets, 90% customer satisfaction rate, 40% cost savings",
-    tech: ["Artificial Intelligence", "AI Analytics", "Machine Learning", "Intelligent Automation"],
+    tech: ["Artificial Intelligence", "Data Tracking", "Machine Learning", "Innovation"],
     technologies: ["Python", "TensorFlow", "React", "Node.js", "PostgreSQL", "AWS"],
     timeline: [
       { phase: "Discovery", desc: "Understanding requirements and market analysis" },
@@ -67,7 +67,7 @@ export const projects: Project[] = [
       "VUETELLIGENCE MEETINGS delivers 4K HDR video conferencing with AI-powered noise cancellation, unlimited participants, and integrated collaboration tools.",
     results:
       "35% improvement in team productivity, 60% reduction in travel costs, 95% uptime SLA",
-    tech: ["Video Conferencing", "Virtual Meetings", "Business Communication", "Enterprise Technology"],
+    tech: ["Cloud Platform", "Virtual Meetings", "Secure Video Calls", "Screen Sharing"],
     technologies: ["WebRTC", "React", "Node.js", "Redis", "Kubernetes", "GCP"],
     timeline: [
       { phase: "Research", desc: "Analyzing existing solutions and identifying gaps" },
@@ -103,7 +103,7 @@ export const projects: Project[] = [
       "DEIJIDESIGN offers bespoke branding, editorial design, and digital experiences built on deep cultural research and world-class craftsmanship.",
     results:
       "200% increase in brand perception scores, partnerships with Oprah's OWN Network, JLo's brand portfolio, and global luxury retailers",
-    tech: ["Italian Craftsmanship", "Luxury Linen", "Modern Lifestyle", "Luxury Wear"],
+    tech: ["Italian Craftsmanship", "Premium Products", "Modern Lifestyle", "Luxury Wear"],
     technologies: ["Figma", "Adobe Creative Suite", "Framer", "Webflow", "After Effects", "Blender"],
     timeline: [
       { phase: "Brand Audit", desc: "Deep dive into brand DNA and market positioning" },

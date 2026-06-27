@@ -211,26 +211,37 @@ export default function Index() {
         <div className="max-w-7xl mx-auto space-y-16">
           {/* Project 1 - Amy AI */}
           <div className="grid md:grid-cols-12 gap-8 items-stretch animate-fade-in-up">
-            <div className="md:col-span-6 rounded-3xl overflow-hidden bg-black min-h-[450px]">
+            <div className="md:col-span-6 rounded-3xl overflow-hidden bg-black min-h-[320px]">
               <img
-                src="/Picture2.png"
+                src="/Picture3.jpeg"
                 alt="Amy AI"
-                className="w-full h-full object-fill hover:scale-105 transition-transform duration-300"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
               />
             </div>
-            <div className="md:col-span-6 bg-gray-100 p-10 rounded-2xl flex flex-col justify-center">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Amy AI</h3>
-              <p className="text-gray-700 mb-4 leading-relaxed text-base">
+            <div className="md:col-span-6 bg-gray-100 p-8 rounded-2xl flex flex-col justify-center">
+              <h3 className="text-2xl font-bold text-gray-900 mb-3">AMY AI</h3>
+              <p className="text-gray-700 mb-6 leading-relaxed text-sm">
                 AMY AI delivers instant, human-like customer support through an
                 intelligent virtual avatar. Powered by advanced contextual awareness
                 and real-time knowledge access, AMY enhances communication,
-                personalization, and engagement.
+                personalization, and engagement across every touchpoint.
               </p>
-              <p className="text-gray-700 mb-6 leading-relaxed text-base">
-                AMY AI delivers instant, human-like customer support through an
-                intelligent virtual avatar. Powered by advanced contextual awareness
-                and real-time knowledge access, AMY enhances communication,
-                personalization, and engagement.
+              <button
+                onClick={() => navigate("https://www.deijidesign.com/")}
+                className="bg-neon-green text-black px-6 py-2 rounded font-semibold text-sm hover:bg-neon-green-dark transition w-fit">
+                Visit AMY AI
+              </button>
+            </div>
+          </div>
+
+          {/* Project 2 - VUETELLIGENCE MEETINGS */}
+          <div className="grid md:grid-cols-12 gap-8 items-stretch animate-fade-in-up">
+            <div className="md:col-span-6 bg-gray-100 p-8 rounded-2xl flex flex-col justify-center order-2 md:order-1">
+              <h3 className="text-2xl font-bold text-gray-900 mb-3 uppercase">VUETELLIGENCE MEETINGS</h3>
+              <p className="text-gray-700 mb-6 leading-relaxed text-sm">
+                A secure, next-generation video conferencing platform for businesses of all sizes.
+                Featuring 4K HDR video, enhanced audio clarity, and unlimited meeting capacity,
+                it delivers a truly immersive communication experience.
               </p>
               <button
                 onClick={() => navigate("https://www.deijidesign.com/")}
@@ -238,32 +249,8 @@ export default function Index() {
                 View More
               </button>
             </div>
-          </div>
-
-          {/* Project 2 - VUWR Meetings */}
-          <div className="grid md:grid-cols-12 gap-8 items-stretch animate-fade-in-up">
-            <div className="md:col-span-6 bg-gray-100 p-10 rounded-2xl flex flex-col justify-center order-2 md:order-1">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 uppercase">VUETELLIGENCE MEETINGS</h3>
-              <p className="text-gray-700 mb-4 leading-relaxed text-base">
-                VUETELLIGENCE MEETINGS is a secure, next-generation video conferencing platform
-                designed for businesses of all sizes. Featuring 4K HDR video, enhanced
-                audio clarity, and unlimited meeting capacity, it delivers a truly
-                immersive communication experience.
-              </p>
-              <p className="text-gray-700 mb-6 leading-relaxed text-base">
-                VUETELLIGENCE MEETINGS is a secure, next-generation video conferencing platform
-                designed for businesses of all sizes. Featuring 4K HDR video, enhanced
-                audio clarity, and unlimited meeting capacity, it delivers a truly
-                immersive communication experience.
-              </p>
-              <button 
-               onClick={() => navigate("https://www.deijidesign.com/")}
-              className="bg-neon-green text-black px-6 py-2 rounded font-semibold text-sm hover:bg-neon-green-dark transition w-fit">
-                View More
-              </button>
-            </div>
             <div
-              className="md:col-span-6 rounded-3xl overflow-hidden bg-black min-h-[450px] order-1 md:order-2 relative cursor-pointer group"
+              className="md:col-span-6 rounded-3xl overflow-hidden bg-black min-h-[320px] order-1 md:order-2 relative cursor-pointer group"
               onClick={() => setIsVideoModalOpen(true)}
             >
               <video
@@ -284,33 +271,24 @@ export default function Index() {
 
           {/* Project 3 - DEIJIDESIGN */}
           <div className="grid md:grid-cols-12 gap-8 items-stretch animate-fade-in-up">
-            <div className="md:col-span-6 rounded-3xl overflow-hidden bg-black min-h-[450px]">
+            <div className="md:col-span-6 rounded-3xl overflow-hidden bg-black min-h-[320px]">
               <img
                 src="https://vuetelligence.com/assets/design-afcf5462.jpg"
                 alt="DEIJIDESIGN"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
               />
             </div>
-            <div className="md:col-span-6 bg-gray-100 p-10 rounded-2xl flex flex-col justify-center">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 uppercase">DEIJIDESIGN</h3>
-              <p className="text-gray-700 mb-4 leading-relaxed text-base">
-                DEIJIDESIGN redefines what luxury means. It is built on confidence,
-                creativity, and artistry. Every creation speaks of timeless elegance.
-                Each design is a statement of individuality. Craftsmanship and detail
-                are never compromised. It inspires a new generation of global luxury
-                consumers.
+            <div className="md:col-span-6 bg-gray-100 p-8 rounded-2xl flex flex-col justify-center">
+              <h3 className="text-2xl font-bold text-gray-900 mb-3 uppercase">DEIJIDESIGN</h3>
+              <p className="text-gray-700 mb-6 leading-relaxed text-sm">
+                DEIJIDESIGN redefines luxury through confidence, creativity, and artistry.
+                Every creation speaks of timeless elegance and individuality — craftsmanship
+                and detail never compromised, inspiring a new generation of global luxury consumers.
               </p>
-              <p className="text-gray-700 mb-6 leading-relaxed text-base">
-                DEIJIDESIGN redefines what luxury means. It is built on confidence,
-                creativity, and artistry. Every creation speaks of timeless elegance.
-                Each design is a statement of individuality. Craftsmanship and detail
-                are never compromised. It inspires a new generation of global luxury
-                consumers.
-              </p>
-              <button 
-               onClick={() => navigate("https://www.deijidesign.com/")}
-              className="bg-neon-green text-black px-6 py-2 rounded font-semibold text-sm hover:bg-neon-green-dark transition w-fit">
-                View More
+              <button
+                onClick={() => navigate("https://www.deijidesign.com/")}
+                className="bg-neon-green text-black px-6 py-2 rounded font-semibold text-sm hover:bg-neon-green-dark transition w-fit">
+                Visit DEIJIDESIGN
               </button>
             </div>
           </div>
@@ -321,7 +299,7 @@ export default function Index() {
       <section
         className="relative py-24 md:py-24 px-4 pt-12 sm:px-6 lg:px-8 overflow-hidden"
         style={{
-          backgroundImage: "url(/Picture2.png)",
+          backgroundImage: "url(/Picture3.jpeg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -361,35 +339,35 @@ export default function Index() {
                 quote: "WOW!!! This is a transformative and generational shift in communications.",
                 full: "Thanks so much for forwarding me updates. You continue to inspire and create what is impossible for others to do. Going through the platform now. WOW!!! This is a transformative and generational shift in communications.",
                 name: "John G.",
-                email: "jgipson1989@gmail.com",
-                title: "",
+                email: "",
+                title: "Media",
               },
               {
                 quote: "Users are in for a big surprise as they see and hear what it can do!",
                 full: "This will generate considerable adoption in Vuetelligence across social media and cable tv. Users are in for a big surprise as they see and hear what it can do!",
                 name: "Bruce",
-                email: "pwrchaser@aol.com",
-                title: "",
+                email: "",
+                title: "Model",
               },
               {
                 quote: "I get a feeling I could start a business, connect it to Vuetelligence, and practically let it run itself!",
                 full: "I looked over what you sent and I am not only impressed, I am overwhelmed. I get a feeling I could start a business, connect it to Vuetelligence, and practically let it run itself!",
                 name: "Bruce C.",
-                email: "bruce@camprey.com",
+                email: "",
                 title: "Former White House Communication Security Officer/Analyst",
               },
               {
                 quote: "You really got something going here. It's a race to Alpha Centauri!",
                 full: "You really got something going here. It's a race to Alpha Centauri!",
                 name: "Dr. Dennis Bonnette",
-                email: "drbonnette@twc.com",
-                title: "",
+                email: "",
+                title: "Brand Executive",
               },
               {
                 quote: "This is sooooooooooooo amazing.",
                 full: "This is sooooooooooooo amazing.",
                 name: "Sal Fradella",
-                email: "sfradella@maxmgrp.com",
+                email: "",
                 title: "Investment Banker",
               },
               {
@@ -645,7 +623,7 @@ export default function Index() {
       <section
         className="relative py-24 md:py-24 px-4 pt-12 sm:px-6 lg:px-8 overflow-hidden"
         style={{
-          backgroundImage: "url(/Picture2.png)",
+          backgroundImage: "url(/Picture3.jpeg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}

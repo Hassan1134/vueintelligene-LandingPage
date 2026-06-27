@@ -59,9 +59,9 @@ export default function ProjectDetail() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
           <div className="p-8 sm:p-12 lg:p-16 w-full">
-            <span className="inline-block bg-neon-green/20 text-neon-green text-sm font-semibold px-4 py-2 rounded-full mb-6">
+            {/* <span className="inline-block bg-neon-green/20 text-neon-green text-sm font-semibold px-4 py-2 rounded-full mb-6">
               {project.category}
-            </span>
+            </span> */}
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">{project.title}</h1>
             <p className="text-white/80 text-lg max-w-2xl mb-6">{project.fullDescription}</p>
             {(project.id === 1 || project.id === 3) && (

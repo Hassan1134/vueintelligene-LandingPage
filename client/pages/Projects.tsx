@@ -75,11 +75,11 @@ export default function Projects() {
                 </div>
 
                 <div className="p-6">
-                  <div className="flex items-start justify-between mb-3">
+                  {/* <div className="flex items-start justify-between mb-3">
                     <span className="inline-block bg-neon-green text-black text-xs font-semibold px-3 py-1 rounded-full">
                       {project.category}
                     </span>
-                  </div>
+                  </div> */}
                   <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-neon-green transition">
                     {project.title}
                   </h3>
